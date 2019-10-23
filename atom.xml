@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://guugg.github.io</id>
     <title>咕返</title>
-    <updated>2019-10-23T13:51:00.281Z</updated>
+    <updated>2019-10-23T13:52:03.834Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://guugg.github.io"/>
     <link rel="self" href="https://guugg.github.io/atom.xml"/>
@@ -10,6 +10,15 @@
     <logo>https://guugg.github.io/images/avatar.png</logo>
     <icon>https://guugg.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, 咕返</rights>
+    <entry>
+        <title type="html"><![CDATA[测试一篇文章]]></title>
+        <id>https://guugg.github.io/post/ce-shi-yi-pian-wen-zhang</id>
+        <link href="https://guugg.github.io/post/ce-shi-yi-pian-wen-zhang">
+        </link>
+        <updated>2019-10-23T13:51:26.000Z</updated>
+        <content type="html"><![CDATA[<p>查看是否能够直接评论</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
         <id>https://guugg.github.io/post/hello-gridea</id>
