@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://guhua.coding.me/guhua</id>
+    <id>https://guhua.coding.me</id>
     <title>咕返</title>
-    <updated>2019-10-23T15:13:30.983Z</updated>
+    <updated>2019-10-23T15:53:32.614Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://guhua.coding.me/guhua"/>
-    <link rel="self" href="https://guhua.coding.me/guhua/atom.xml"/>
+    <link rel="alternate" href="https://guhua.coding.me"/>
+    <link rel="self" href="https://guhua.coding.me/atom.xml"/>
     <subtitle>温故而知新</subtitle>
-    <logo>https://guhua.coding.me/guhua/images/avatar.png</logo>
-    <icon>https://guhua.coding.me/guhua/favicon.ico</icon>
+    <logo>https://guhua.coding.me/images/avatar.png</logo>
+    <icon>https://guhua.coding.me/favicon.ico</icon>
     <rights>All rights reserved 2019, 咕返</rights>
     <entry>
         <title type="html"><![CDATA[测试一篇文章]]></title>
-        <id>https://guhua.coding.me/guhua/post/ce-shi-yi-pian-wen-zhang</id>
-        <link href="https://guhua.coding.me/guhua/post/ce-shi-yi-pian-wen-zhang">
+        <id>https://guhua.coding.me/post/ce-shi-yi-pian-wen-zhang</id>
+        <link href="https://guhua.coding.me/post/ce-shi-yi-pian-wen-zhang">
         </link>
         <updated>2019-10-23T13:51:26.000Z</updated>
         <content type="html"><![CDATA[<p>查看是否能够直接评论</p>
@@ -21,8 +21,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://guhua.coding.me/guhua/post/hello-gridea</id>
-        <link href="https://guhua.coding.me/guhua/post/hello-gridea">
+        <id>https://guhua.coding.me/post/hello-gridea</id>
+        <link href="https://guhua.coding.me/post/hello-gridea">
         </link>
         <updated>2018-12-11T16:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
