@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://803344.xyz</id>
     <title>咕返</title>
-    <updated>2020-05-13T04:49:08.146Z</updated>
+    <updated>2020-05-13T11:22:35.524Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://803344.xyz"/>
     <link rel="self" href="https://803344.xyz/atom.xml"/>
@@ -11,12 +11,142 @@
     <icon>https://803344.xyz/favicon.ico</icon>
     <rights>All rights reserved 2020, 咕返</rights>
     <entry>
+        <title type="html"><![CDATA[jquery生成二维码，不依赖服务端，加悬停显示二维码]]></title>
+        <id>https://803344.xyz/post/E96PXeXJv/</id>
+        <link href="https://803344.xyz/post/E96PXeXJv/">
+        </link>
+        <updated>2020-05-13T10:52:21.000Z</updated>
+        <summary type="html"><![CDATA[<blockquote>
+<p>今天发现了一个jquery插件直接在页面生成二维码，这样就不需要服务端生成二维码图片并保存到服务器了。</p>
+</blockquote>
+]]></summary>
+        <content type="html"><![CDATA[<blockquote>
+<p>今天发现了一个jquery插件直接在页面生成二维码，这样就不需要服务端生成二维码图片并保存到服务器了。</p>
+</blockquote>
+<!-- more -->
+<h2 id="转载于菜菜___">转载于菜菜___</h2>
+<p><a href="https://www.jianshu.com/p/a4f33b36780d">菜菜___</a></p>
+<h3 id="html代码">html代码</h3>
+<pre><code class="language-html">&lt;!DOCTYPE&gt;  
+&lt;html&gt;  
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;
+&lt;title&gt;文档标题&lt;/title&gt;
+&lt;script src=&quot;https://cdn.staticfile.org/jquery/2.2.4/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div style=&quot;text-align: center&quot;&gt;
+  &lt;div id=&quot;login-btn&quot;&gt;&lt;h2&gt;该二维码支持跳转url,中文和LOGO&lt;/h2&gt;&lt;/div&gt;
+&lt;div id=&quot;login-box&quot; style=&quot;display:none;&quot;&gt;
+    &lt;div id=&quot;qrcodeCanvas&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="jq代码与js代码">JQ代码与JS代码</h3>
+<pre><code class="language-js">function utf16to8(str) {
+    var out, i, len, c;
+
+    out = &quot;&quot;;
+    len = str.length;
+    for(i = 0; i &lt; len; i++) {
+    c = str.charCodeAt(i);
+    if ((c &gt;= 0x0001) &amp;&amp; (c &lt;= 0x007F)) {
+        out += str.charAt(i);
+    } else if (c &gt; 0x07FF) {
+        out += String.fromCharCode(0xE0 | ((c &gt;&gt; 12) &amp; 0x0F));
+        out += String.fromCharCode(0x80 | ((c &gt;&gt;  6) &amp; 0x3F));
+        out += String.fromCharCode(0x80 | ((c &gt;&gt;  0) &amp; 0x3F));
+    } else {
+        out += String.fromCharCode(0xC0 | ((c &gt;&gt;  6) &amp; 0x1F));
+        out += String.fromCharCode(0x80 | ((c &gt;&gt;  0) &amp; 0x3F));
+    }
+    }
+    return out;
+}
+
+function utf8to16(str) {
+    var out, i, len, c;
+    var char2, char3;
+
+    out = &quot;&quot;;
+    len = str.length;
+    i = 0;
+    while(i &lt; len) {
+    c = str.charCodeAt(i++);
+    switch(c &gt;&gt; 4)
+    { 
+      case 0: case 1: case 2: case 3: case 4: case 5: case 6: case 7:
+        // 0xxxxxxx
+        out += str.charAt(i-1);
+        break;
+      case 12: case 13:
+        // 110x xxxx   10xx xxxx
+        char2 = str.charCodeAt(i++);
+        out += String.fromCharCode(((c &amp; 0x1F) &lt;&lt; 6) | (char2 &amp; 0x3F));
+        break;
+      case 14:
+        // 1110 xxxx  10xx xxxx  10xx xxxx
+        char2 = str.charCodeAt(i++);
+        char3 = str.charCodeAt(i++);
+        out += String.fromCharCode(((c &amp; 0x0F) &lt;&lt; 12) |
+                       ((char2 &amp; 0x3F) &lt;&lt; 6) |
+                       ((char3 &amp; 0x3F) &lt;&lt; 0));
+        break;
+    }
+    }
+
+    return out;
+}
+
+
+        $(document).ready(function() {
+            $(&quot;#qrcodeCanvas&quot;).qrcode({
+                render : &quot;canvas&quot;,    //设置渲染方式，有table和canvas，使用canvas方式渲染性能相对来说比较好
+                text : &quot;http://www.baidu.com&quot;,    //扫描二维码后显示的内容,可以直接填一个网址，扫描二维码后自动跳向该链接
+                width : &quot;200&quot;,               //二维码的宽度
+                height : &quot;200&quot;,              //二维码的高度
+                background : &quot;#ffffff&quot;,       //二维码的后景色
+                foreground : &quot;#000000&quot;,        //二维码的前景色
+                src: 'https://i.immmmm.com/media/images/logoo.png',             //二维码中间的图片
+                logoWidthRatio:3,               //二维码中间logo宽占二维码比例系数，为3则占1/3宽，
+                logoHeightRatio:3               //二维码中间logo高占二维码比例系数，为3则占1/3宽，
+            });
+        });
+
+//最后这段是悬停显示的，不要的去掉
+(function(){
+  var btn = document.getElementById('login-btn');
+  var box = document.getElementById('login-box');
+  var timer = null; 
+  box.onmouseover = btn.onmouseover = function(){
+    if(timer) clearTimeout(timer)
+      box.style.display = 'block';
+  }
+  box.onmouseout = btn.onmouseout = function(){
+    timer = setTimeout(function(){
+      box.style.display = 'none';
+    },400);
+ 
+  }
+})();
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[世界，您好！]]></title>
         <id>https://803344.xyz/post/r2-voTEaQ/</id>
         <link href="https://803344.xyz/post/r2-voTEaQ/">
         </link>
         <updated>2020-05-13T04:45:12.000Z</updated>
+        <summary type="html"><![CDATA[<p>欢迎使用WordPress。这是您的第一篇文章。编辑或删除它，然后开始写作吧！</p>
+]]></summary>
         <content type="html"><![CDATA[<p>欢迎使用WordPress。这是您的第一篇文章。编辑或删除它，然后开始写作吧！</p>
+<!-- more -->
+<p><photos><img src="https://lmm.elizen.me/images/2019/10/wl-1.jpg" alt="" loading="lazy"><img src="https://lmm.elizen.me/images/2019/10/wl-3.jpg" alt="" loading="lazy"><img src="https://lmm.elizen.me/images/2019/10/wl-4.jpg" alt="" loading="lazy"><img src="https://lmm.elizen.me/images/2019/10/wl-5.jpeg" alt="" loading="lazy"></photos></p>
 ]]></content>
     </entry>
     <entry>
@@ -25,7 +155,7 @@
         <link href="https://803344.xyz/post/ce-shi-yi-pian-wen-zhang/">
         </link>
         <updated>2019-10-23T13:51:26.000Z</updated>
-        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://803344.xyz/post-images/1589302310113.jpg" alt="" loading="lazy"></figure>
+        <content type="html"><![CDATA[<p><img src="https://lmm.elizen.me/images/2019/10/wl-1.jpg" alt="" loading="lazy"><img src="https://lmm.elizen.me/images/2019/10/wl-3.jpg" alt="" loading="lazy"><img src="https://lmm.elizen.me/images/2019/10/wl-4.jpg" alt="" loading="lazy"><img src="https://lmm.elizen.me/images/2019/10/wl-5.jpeg" alt="" loading="lazy"></p>
 <p>查看是否能够直接评论</p>
 ]]></content>
     </entry>
