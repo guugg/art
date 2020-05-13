@@ -4689,71 +4689,71 @@ div.articles .post-format-audio div.item {
   height: 225px;
   position: relative;
 }
-div.articles.columns-2 a.thumb {
+div.articles.vcolumns-2 a.thumb {
   min-height: 325px;
 }
-div.articles.columns-2 iframe {
+div.articles.vcolumns-2 iframe {
   height: 325px;
 }
-div.articles.columns-2 .post-format-gallery {
+div.articles.vcolumns-2 .post-format-gallery {
   max-height: 325px;
 }
-div.articles.columns-2 .post-format-gallery div.item {
+div.articles.vcolumns-2 .post-format-gallery div.item {
   height: 325px;
 }
-div.articles.columns-4 {
+div.articles.vcolumns-4 {
   margin: 0 5px;
 }
-div.articles.columns-4 a.thumb {
+div.articles.vcolumns-4 a.thumb {
   min-height: 200px;
 }
-div.articles.columns-4 iframe {
+div.articles.vcolumns-4 iframe {
   height: 200px;
 }
-div.articles.columns-4 .post-format-gallery {
+div.articles.vcolumns-4 .post-format-gallery {
   max-height: 200px;
 }
-div.articles.columns-4 .post-format-gallery div.item {
+div.articles.vcolumns-4 .post-format-gallery div.item {
   height: 200px;
 }
-div.articles.columns-4 article {
+div.articles.vcolumns-4 article {
   padding-left: 15px;
   padding-right: 15px;
   padding-bottom: 25px;
 }
-div.articles.columns-4 article div.tags a,
-div.articles.columns-4 article .widget_tag_cloud a {
+div.articles.vcolumns-4 article div.tags a,
+div.articles.vcolumns-4 article .widget_tag_cloud a {
   font-size: 13px;
 }
-div.articles.columns-4 article .post-format-wrapper {
+div.articles.vcolumns-4 article .post-format-wrapper {
   margin-bottom: 18px;
 }
-div.articles.columns-4 article .title,
-div.articles.columns-4 article .wpcf7 label,
-.wpcf7 div.articles.columns-4 article label,
-div.articles.columns-4 article #single #comments.hosted .comment .comment-author,
-#single #comments.hosted .comment div.articles.columns-4 article .comment-author {
+div.articles.vcolumns-4 article .title,
+div.articles.vcolumns-4 article .wpcf7 label,
+.wpcf7 div.articles.vcolumns-4 article label,
+div.articles.vcolumns-4 article #single #comments.hosted .comment .comment-author,
+#single #comments.hosted .comment div.articles.vcolumns-4 article .comment-author {
   font-size: 19px;
 }
-div.articles.columns-4 article div.post-excerpt {
+div.articles.vcolumns-4 article div.post-excerpt {
   font-size: 13px;
   margin-bottom: 30px;
 }
-div.articles.columns-4 article .author-meta {
+div.articles.vcolumns-4 article .author-meta {
   font-size: 12px;
 }
-div.articles.columns-4 article .author-meta a.author {
+div.articles.vcolumns-4 article .author-meta a.author {
   line-height: 30px;
 }
-div.articles.columns-4 article .author-meta .author-image {
+div.articles.vcolumns-4 article .author-meta .author-image {
   width: 30px;
   height: 30px;
 }
-div.articles.columns-4 article .author-meta .meta-info {
+div.articles.vcolumns-4 article .author-meta .meta-info {
   margin-left: 7px;
   line-height: 30px;
 }
-div.articles.columns-4 article .author-meta .meta-info i {
+div.articles.vcolumns-4 article .author-meta .meta-info i {
   top: -1px;
 }
 div.articles.classic {
@@ -5983,6 +5983,11 @@ div.epcl-share a.vk {
   float: left;
 }
 #single .vmail {
+  width: 50%;
+  float: right;
+  display: none;
+}
+#single .vlink {
   width: 50%;
   float: right;
 }
@@ -9101,44 +9106,44 @@ img.mfp-img {
   display: inline-block;
   vertical-align: middle;
 }
-.vcount.col,
+.vcount.vcol,
 .year {
   text-align: center;
   font-size: 28px;
   font-weight: 800;
   margin: 20px 0;
 }
-.v .vwrap .vcontrol .col {
+.v .vwrap .vrow .vcol {
   display: inline-block;
   vertical-align: middle;
   color: #ccc;
 }
-.v .vwrap .vcontrol .col.text-right {
+.v .vwrap .vrow .vcol.text-right {
   text-align: right;
 }
-.v .vwrap .vcontrol .col.text-right button {
+.v .vwrap .vrow .vcol.text-right button {
   padding: 5px 30px;
   width: 280px;
 }
-.v .vwrap .vcontrol .col svg {
+.v .vwrap .vrow .vcol svg {
   margin-right: 2px;
   overflow: hidden;
   fill: currentColor;
   vertical-align: middle;
 }
-.v .vwrap .vcontrol .col.col-20 {
+.v .vwrap .vrow .vcol-30 {
   width: 20%;
 }
-.v .vwrap .vcontrol .col.col-40 {
+.v .vwrap .vrow .vcol.vcol-40 {
   width: 40%;
 }
-.v .vwrap .vcontrol .col.col-60 {
+.v .vwrap .vrow .vcol.vcol-60 {
   width: 60%;
 }
-.v .vwrap .vcontrol .col.col-80 {
+.v .vwrap .vrow .vcol.vcol-70 {
   width: 100%;
 }
-.v .vwrap .vcontrol .col.split {
+.v .vwrap .vrow .vcol.split {
   width: 50%;
 }
 .v .vwrap .vmark {
@@ -9184,20 +9189,20 @@ img.mfp-img {
   text-align: center;
   color: #999;
 }
-.v .vlist {
+.v .vcards {
   width: 100%;
 }
-.v .vlist .vcard {
+.v .vcards .vcard {
   padding-top: 1rem;
   position: relative;
   display: block;
 }
-.v .vlist .vcard:after {
+.v .vcards .vcard:after {
   content: "";
   clear: both;
   display: block;
 }
-.v .vlist .vcard .vimg {
+.v .vcards .vcard .vimg {
   width: 4rem;
   height: 4rem;
   float: left;
@@ -9206,11 +9211,11 @@ img.mfp-img {
   border: 1px solid #f5f5f5;
   padding: 0.125rem;
 }
-.v .vlist .vcard .vhead {
+.v .vcards .vcard .vhead {
   line-height: 1.5;
   margin-top: 0;
 }
-.v .vlist .vcard .vhead .vnick {
+.v .vcards .vcard .vhead .vnick {
   position: relative;
   font-weight: 500;
   margin-right: 0.875rem;
@@ -9219,30 +9224,30 @@ img.mfp-img {
   text-decoration: none;
   display: inline-block;
 }
-.v .vlist .vcard .vh {
+.v .vcards .vcard .vh {
   font-size: 18px;
   overflow: hidden;
   padding-bottom: 0.5rem;
   border-bottom: 1px dashed #f5f5f5;
 }
-.v .vlist .vcard .vh .vtime {
+.v .vcards .vcard .vh .vtime {
   color: #b3b3b3;
   margin-right: 0.875rem;
 }
-.v .vlist .vcard .vh .vmeta {
+.v .vcards .vcard .vh .vmeta {
   font-size: 14px;
   line-height: 1;
   position: relative;
 }
-.v .vlist .vcard .vh .vmeta .vat {
+.v .vcards .vcard .vh .vmeta .vat {
   color: #ef2f11;
   cursor: pointer;
   float: right;
 }
-.v .vlist .vcard:last-child .vh {
+.v .vcards .vcard:last-child .vh {
   border-bottom: none;
 }
-.v .vlist .vcard .vcontent {
+.v .vcards .vcard .vcontent {
   word-wrap: break-word;
   word-break: break-all;
   text-align: justify;
@@ -9250,18 +9255,18 @@ img.mfp-img {
   line-height: 2;
   position: relative;
 }
-.v .vlist .vcard .vcontent frame,
-.v .vlist .vcard .vcontent iframe,
-.v .vlist .vcard .vcontent img {
+.v .vcards .vcard .vcontent frame,
+.v .vcards .vcard .vcontent iframe,
+.v .vcards .vcard .vcontent img {
   max-width: 100%;
   border: none;
 }
-.v .vlist .vcard .vcontent.expand {
+.v .vcards .vcard .vcontent.expand {
   cursor: pointer;
   max-height: 11.25rem;
   overflow: hidden;
 }
-.v .vlist .vcard .vcontent.expand:before {
+.v .vcards .vcard .vcontent.expand:before {
   display: block;
   content: "";
   position: absolute;
@@ -9272,7 +9277,7 @@ img.mfp-img {
   pointer-events: none;
   background: linear-gradient(180deg, hsla(0, 0%, 100%, 0), hsla(0, 0%, 100%, 0.9));
 }
-.v .vlist .vcard .vcontent.expand:after {
+.v .vcards .vcard .vcontent.expand:after {
   display: block;
   content: "Click on expand";
   text-align: center;
@@ -9286,12 +9291,12 @@ img.mfp-img {
   pointer-events: none;
   background: hsla(0, 0%, 100%, 0.9);
 }
-.v .vlist .vcard .vquote {
+.v .vcards .vcard .vquote {
   color: #666;
   margin-top: 1rem;
   padding-left: 0;
 }
-.v .vlist .vcard .vquote .vimg {
+.v .vcards .vcard .vquote .vimg {
   width: 3rem;
   height: 3rem;
 }
@@ -9334,32 +9339,34 @@ img.mfp-img {
   }
 }
 .v .vwrap .vedit .vctrl span.vpreview-btn,
-.v .vwrap .vcontrol .col.col-20,
-.v .vlist .vcard .vhead .vsys,
+.markdown path,
+.vpower.txt-right,
+.v .vwrap .vrow .vcol-30,
+.v .vcards .vcard .vhead .vsys,
 .v .vinfo,
 .v info {
   display: none;
 }
 @media screen and (max-width: 720px) {
-  .v .vlist .vcard .vh {
+  .v .vcards .vcard .vh {
     font-size: 15px;
   }
-  .v .vlist .vcard .vh .vmeta {
+  .v .vcards .vcard .vh .vmeta {
     font-size: 13px;
     float: right;
     margin-left: 10px;
   }
-  .v .vlist .vcard .vh .vmeta .vtime {
+  .v .vcards .vcard .vh .vmeta .vtime {
     display: none;
   }
-  .v .vlist .vcard .vimg {
+  .v .vcards .vcard .vimg {
     width: 2.5rem;
     height: 2.5rem;
   }
-  .v .vlist .vcard .vquote .vimg {
+  .v .vcards .vcard .vquote .vimg {
     display: none;
   }
-  .v .vlist .vcard .vquote .vcard {
+  .v .vcards .vcard .vquote .vcard {
     padding-top: 0;
   }
   .v .vwrap .vmark .valert {
@@ -9369,7 +9376,7 @@ img.mfp-img {
     color: #fff;
     padding: 1rem 0;
   }
-  .v .vwrap .vcontrol .col.text-right button {
+  .v .vwrap .vrow .vcol.text-right button {
     width: 180px;
   }
 }
